@@ -1,0 +1,70 @@
+:root {
+  --bg: #070a12;
+  --panel: rgba(16, 24, 39, 0.78);
+  --panel-strong: rgba(22, 33, 54, 0.92);
+  --line: rgba(148, 163, 184, 0.22);
+  --text: #eef4ff;
+  --muted: #9fb0c7;
+  --accent: #27d3ff;
+  --accent-2: #9eff7a;
+  --danger: #ff6b7a;
+}
+
+.stApp {
+  background:
+    radial-gradient(circle at top left, rgba(39, 211, 255, 0.16), transparent 32rem),
+    linear-gradient(145deg, #070a12 0%, #0d1524 48%, #091019 100%);
+  color: var(--text);
+}
+
+[data-testid="stSidebar"] {
+  background: rgba(7, 10, 18, 0.9);
+  border-right: 1px solid var(--line);
+}
+
+h1, h2, h3 { letter-spacing: 0; }
+
+.ai-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 18px 48px rgba(0,0,0,.22);
+}
+
+.metric-card {
+  background: var(--panel-strong);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1rem;
+  min-height: 110px;
+}
+
+.metric-value {
+  color: var(--accent);
+  font-size: 2rem;
+  font-weight: 750;
+}
+
+.muted { color: var(--muted); }
+
+.chapter-row, .search-hit {
+  border-left: 3px solid var(--accent);
+  padding: .7rem .9rem;
+  margin: .55rem 0;
+  background: rgba(15, 23, 42, .68);
+  border-radius: 6px;
+}
+
+.flashcard {
+  min-height: 190px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1.2rem;
+  background: linear-gradient(145deg, rgba(39,211,255,.10), rgba(158,255,122,.08));
+}
+
+.stButton > button {
+  border-radius: 7px;
+  border: 1px solid rgba(39,211,255,.38);
+}

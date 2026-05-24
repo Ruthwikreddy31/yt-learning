@@ -1,0 +1,60 @@
+{
+  "topic": "Neural Networks",
+  "questions": [
+    {
+      "question": "What is the primary function of the activation function in a neural network?",
+      "options": [
+        "To reduce the dimensionality of the input data",
+        "To increase the complexity of the model",
+        "To introduce non-linearity into the model",
+        "To reduce the number of hidden layers"
+      ],
+      "answer": "To introduce non-linearity into the model",
+      "explanation": "The activation function is used to introduce non-linearity into the model, allowing it to learn and represent more complex relationships between the inputs and outputs. Without an activation function, the model would only be able to learn linear relationships."
+    },
+    {
+      "question": "Which of the following is a type of neural network architecture?",
+      "options": [
+        "Decision Tree",
+        "Random Forest",
+        "Convolutional Neural Network (CNN)",
+        "Support Vector Machine (SVM)"
+      ],
+      "answer": "Convolutional Neural Network (CNN)",
+      "explanation": "A Convolutional Neural Network (CNN) is a type of neural network architecture that is commonly used for image and video processing tasks. It is designed to take advantage of the spatial structure of the input data, using convolutional and pooling layers to extract features."
+    },
+    {
+      "question": "What is the purpose of the backpropagation algorithm in a neural network?",
+      "options": [
+        "To update the weights and biases of the model during training",
+        "To initialize the weights and biases of the model",
+        "To regularize the model to prevent overfitting",
+        "To evaluate the performance of the model on a test dataset"
+      ],
+      "answer": "To update the weights and biases of the model during training",
+      "explanation": "The backpropagation algorithm is used to update the weights and biases of the model during training, by minimizing the error between the predicted output and the actual output. This is done by calculating the gradient of the loss function with respect to the model's parameters, and using this gradient to update the parameters in a direction that reduces the loss."
+    },
+    {
+      "question": "Which of the following is a common challenge in training neural networks?",
+      "options": [
+        "Overfitting",
+        "Underfitting",
+        "Regularization",
+        "Batch Normalization"
+      ],
+      "answer": "Overfitting",
+      "explanation": "Overfitting is a common challenge in training neural networks, where the model becomes too complex and learns the noise in the training data, rather than the underlying patterns. This can result in poor performance on unseen data, and can be addressed using techniques such as regularization, dropout, and early stopping."
+    },
+    {
+      "question": "What is the purpose of the hidden layers in a neural network?",
+      "options": [
+        "To increase the dimensionality of the input data",
+        "To reduce the complexity of the model",
+        "To learn abstract representations of the input data",
+        "To improve the interpretability of the model"
+      ],
+      "answer": "To learn abstract representations of the input data",
+      "explanation": "The hidden layers in a neural network are used to learn abstract representations of the input data, by transforming the input data into a higher-level representation that is more suitable for the task at hand. This allows the model to learn complex patterns and relationships in the data, and to make predictions or classifications based on these patterns."
+    }
+  ]
+}

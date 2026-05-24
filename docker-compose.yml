@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: youtube_learning_assistant
+    ports:
+      - "8501:8501"
+    volumes:
+      - chromadb_data:/app/chromadb_data
+      - uploads_data:/app/uploads
+    # Load keys and DB URLs directly from your .env file
+    env_file:
+      - .env
+    restart: always
+
+volumes:
+  chromadb_data:
+    driver: local
+  uploads_data:
+    driver: local
