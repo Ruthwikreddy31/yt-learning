@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from config import settings
+from langsmith import traceable
 
 
 class GeminiService:
@@ -32,6 +33,7 @@ class GeminiService:
             except ImportError as exc:
                 raise RuntimeError("Google AI SDK is not installed. Run: pip install google-genai google-generativeai") from exc
 
+    @traceable(run_type="llm", name="Gemini Generation")
     def generate_text(self, prompt: str, system_instruction: str | None = None, json_mode: bool = True, temperature: float = 0.2) -> str:
         if not self.is_configured:
             return "{}" if json_mode else "I could not find this topic in the uploaded video."

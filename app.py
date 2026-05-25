@@ -39,7 +39,7 @@ PAGES = {
 def bootstrap_state() -> None:
     st.session_state.setdefault("page", "Dashboard")
     st.session_state.setdefault("selected_video_id", None)
-    st.session_state.setdefault("selected_ai_model", "openai")
+    st.session_state.setdefault("selected_ai_model", "gemini")
     st.session_state.setdefault("chat_messages", [])
     st.session_state.setdefault("quiz_answers", {})
 
@@ -58,9 +58,9 @@ def render_sidebar() -> None:
 
         st.selectbox(
             "AI provider",
-            options=["openai", "local", "gemini", "groq"],
+            options=["gemini", "openai", "local", "groq"],
             key="selected_ai_model",
-            help="Use OpenAI for best topic-based generation. Local works offline. Gemini/Groq are optional.",
+            help="Use Gemini as default. Local works offline. Groq is optional.",
         )
 
         st.divider()

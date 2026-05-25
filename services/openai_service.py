@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from config import settings
+from langsmith import traceable
 
 
 class OpenAIService:
@@ -20,6 +21,7 @@ class OpenAIService:
         self._client = OpenAI(api_key=settings.openai_api_key)
         return self._client
 
+    @traceable(run_type="llm", name="OpenAI Generation")
     def generate_text(
         self,
         prompt: str,
