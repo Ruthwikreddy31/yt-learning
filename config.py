@@ -21,7 +21,17 @@ def _load_dotenv(path: Path) -> None:
 
 
 def _env(name: str, default: str | None = None) -> str | None:
-    return os.getenv(name) or os.getenv(name.upper()) or os.getenv(name.lower()) or default
+    val = os.getenv(name) or os.getenv(name.upper()) or os.getenv(name.lower())
+    if val:
+        return val
+    try:
+        import streamlit as st
+        for key in (name, name.upper(), name.lower()):
+            if key in st.secrets:
+                return str(st.secrets[key])
+    except Exception:
+        pass
+    return default
 
 
 def _env_int(name: str, default: int) -> int:

@@ -13,6 +13,14 @@ class ChromaDBService:
         self.semantic_chunks = None
         self.quiz_embeddings = None
         try:
+            # Override sqlite3 with pysqlite3 if available (crucial for older SQLite versions on Streamlit Cloud/Linux)
+            try:
+                __import__('pysqlite3')
+                import sys
+                sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+            except ImportError:
+                pass
+
             import chromadb
 
             self.client = chromadb.PersistentClient(path=str(settings.project_root / settings.chroma_persist_dir))
