@@ -29,5 +29,6 @@ RUN mkdir -p chromadb_data uploads
 # Expose Streamlit's port
 EXPOSE 8501
 
-# Run the app binding to all interfaces for container routing
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+# Run the app binding to all interfaces for container routing, dynamically using the platform-assigned PORT
+CMD streamlit run app.py --server.port=$PORT --server.address=0.0.0.0
+
